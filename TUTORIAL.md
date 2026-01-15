@@ -1,88 +1,121 @@
-# Codex CLI Tool Tutorial
+# 🚀 Getting Started with Codex: A Step-by-Step Guide
 
-Welcome to the Codex CLI tool tutorial! This guide will walk you through the installation and usage of Codex.
+Welcome to the official tutorial for the Codex CLI tool! This guide will walk you through everything you need to know to get up and running with Codex, from installation to advanced usage.
 
-## 1. Installation
+---
 
-To use Codex, you first need to install it. Open your terminal or command prompt, navigate to the `codex_cli_tutorial` directory, and run the following command:
+## 1. 💾 Installation
 
-```bash
-pip install .
-```
+Before you can use Codex, you need to install it on your system. The installation is straightforward using `pip`.
 
-This command will install the `codex` tool and make it available in your terminal.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/turjoyce20220103002-source/codex_cli_tutorial.git
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd codex_cli_tutorial
+    ```
+3.  **Install the tool:**
+    ```bash
+    pip install .
+    ```
 
-## 2. Usage
+> **💡 Pro Tip:** The `pip install .` command installs the project in "editable" mode, which means any changes you make to the source code will be immediately available when you run the `codex` command.
 
-Codex provides several commands to help you with your development tasks.
+---
+
+## 2. 🛠️ Core Commands
+
+Codex provides a set of commands to help you manage your projects. Here's a look at the core functionalities:
 
 ### 2.1. Creating Files
 
-To create a new file, use the `codex create file` command, followed by the name of the file you want to create.
+Need to create a new file quickly? Use the `codex create file` command.
 
-**Example:**
-
+**Usage:**
 ```bash
-codex create file my_new_file.txt
+codex create file <filename>
 ```
 
-This will create an empty file named `my_new_file.txt` in your current directory.
+**Example:**
+```bash
+codex create file README.md
+```
+This will create an empty file named `README.md` in your current directory. You'll see a confirmation message in your terminal:
+```
+File created: README.md
+```
 
 ### 2.2. Creating Directories
 
-To create a new directory, use the `codex create dir` command, followed by the name of the directory.
+To create a new directory (or folder), use the `codex create dir` command.
 
-**Example:**
-
+**Usage:**
 ```bash
-codex create dir my_new_folder
+codex create dir <dirname>
 ```
 
-This will create a new directory named `my_new_folder` in your current directory.
+**Example:**
+```bash
+codex create dir src
+```
+This will create a new directory named `src`. The output will be:
+```
+Directory created: src
+```
 
 ### 2.3. Counting Lines of Code
 
-Codex can count the total number of lines in a file or in all files within a directory.
+Get a quick sense of your project's scale with the `codex count lines` command. It works on both single files and entire directories.
 
-#### Counting Lines in a Single File
-
-To count the lines in a single file, use the `codex count lines` command, followed by the path to the file.
-
-**Example:**
-
+**Usage (for a file):**
 ```bash
-codex count lines my_app/main.py
+codex count lines <file_path>
 ```
 
-#### Counting Lines in a Directory
-
-To count the lines in all files within a directory (and its subdirectories), provide the path to the directory.
-
-**Example:**
-
+**Usage (for a directory):**
 ```bash
-codex count lines my_app
+codex count lines <directory_path>
 ```
 
-This will recursively count the lines of all files in the `my_app` directory.
+**Example (file):**
+```bash
+codex count lines src/main.py
+```
 
-## 3. Getting Help
+**Example (directory):**
+```bash
+codex count lines src
+```
+The tool will recursively scan the `src` directory and output the total number of lines in a formatted panel.
 
-You can always get help and see the available commands by running `codex` with the `--help` or `-h` flag.
+---
 
+## 3. 🆘 Getting Help
+
+If you ever forget a command or an option, Codex has a built-in help system.
+
+**For a general overview of all commands:**
 ```bash
 codex --help
 ```
 
-To get help for a specific subcommand, use the `--help` flag after the subcommand.
+**For help with a specific subcommand:**
+```bash
+codex <command> --help
+```
 
 **Example:**
-
 ```bash
 codex create --help
-codex count lines --help
+codex count --help
 ```
 
 ---
 
-That's it! You now know how to use the basic features of the Codex CLI tool.
+## 🎉 Conclusion
+
+You've now mastered the basics of the Codex CLI tool! You can create files and directories, count lines of code, and get help when you need it.
+
+We encourage you to explore the tool and see how it can fit into your development workflow. Happy coding!
