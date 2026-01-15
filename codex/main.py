@@ -1,22 +1,24 @@
 import argparse
 import os
+from rich import print
+from rich.panel import Panel
 
 def create_file(args):
     """Creates a new file."""
     try:
         with open(args.filename, 'w') as f:
             pass
-        print(f"File created: {args.filename}")
+        print(f"[bold green]File created:[/] {args.filename}")
     except IOError as e:
-        print(f"Error creating file: {e}")
+        print(f"[bold red]Error creating file:[/] {e}")
 
 def create_dir(args):
     """Creates a new directory."""
     try:
         os.makedirs(args.dirname)
-        print(f"Directory created: {args.dirname}")
+        print(f"[bold green]Directory created:[/] {args.dirname}")
     except OSError as e:
-        print(f"Error creating directory: {e}")
+        print(f"[bold red]Error creating directory:[/] {e}")
 
 def count_lines(args):
     """Counts the lines of code in a file or directory."""
@@ -29,10 +31,10 @@ def count_lines(args):
                 filepath = os.path.join(dirpath, filename)
                 total_lines += _count_lines_in_file(filepath)
     else:
-        print(f"Error: Path not found - {args.path}")
+        print(f"[bold red]Error: Path not found -[/] {args.path}")
         return
 
-    print(f"Total lines: {total_lines}")
+    print(Panel(f"[bold yellow]Total lines:[/] {total_lines}", title="Line Count"))
 
 def _count_lines_in_file(filepath):
     """Helper function to count lines in a single file."""
